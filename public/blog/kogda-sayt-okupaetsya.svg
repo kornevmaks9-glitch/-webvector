@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <circle cx="1000" cy="100" r="220" fill="#e8c84a" opacity="0.14"/>
+  <circle cx="140" cy="500" r="200" fill="#7B5CFF" opacity="0.16"/>
+  <g stroke="rgba(242,240,235,0.12)" stroke-width="1">
+    <line x1="280" y1="160" x2="280" y2="470"/>
+    <line x1="280" y1="470" x2="950" y2="470"/>
+  </g>
+  <polyline points="280,440 420,400 560,360 700,280 840,200 950,140" fill="none" stroke="#e8c84a" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#e8c84a">
+    <circle cx="280" cy="440" r="7"/>
+    <circle cx="420" cy="400" r="7"/>
+    <circle cx="560" cy="360" r="7"/>
+    <circle cx="700" cy="280" r="7"/>
+    <circle cx="840" cy="200" r="7"/>
+    <circle cx="950" cy="140" r="9" fill="#f2f0eb"/>
+  </g>
+  <path d="M280 440 L420 400 L560 360 L700 280 L840 200 L950 140 L950 470 L280 470 Z" fill="#e8c84a" opacity="0.08"/>
+</svg>

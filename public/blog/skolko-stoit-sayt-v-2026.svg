@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <circle cx="980" cy="120" r="260" fill="#7B5CFF" opacity="0.18"/>
+  <circle cx="120" cy="540" r="220" fill="#e8c84a" opacity="0.12"/>
+  <g stroke="rgba(242,240,235,0.12)" stroke-width="1" fill="none">
+    <circle cx="600" cy="315" r="230"/>
+    <circle cx="600" cy="315" r="160"/>
+  </g>
+  <g transform="translate(420,205)">
+    <rect x="0" y="0" width="360" height="220" rx="14" fill="none" stroke="#f2f0eb" stroke-opacity="0.5" stroke-width="2"/>
+    <rect x="0" y="0" width="360" height="56" rx="14" fill="#e8c84a"/>
+    <rect x="20" y="22" width="120" height="12" rx="6" fill="#0a0a0a"/>
+    <g fill="#f2f0eb" fill-opacity="0.85">
+      <rect x="20" y="80" width="200" height="14" rx="4"/>
+      <rect x="20" y="108" width="150" height="14" rx="4"/>
+      <rect x="20" y="136" width="180" height="14" rx="4"/>
+    </g>
+    <text x="270" y="185" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#e8c84a" text-anchor="middle">₽</text>
+  </g>
+</svg>

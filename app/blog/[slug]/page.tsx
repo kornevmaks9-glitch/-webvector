@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import { BLOG_POSTS, SERVICES, getPost, type BlogBlock } from "@/lib/content";
+import { BLOG_POSTS, SERVICES, getPost, getPostCover, type BlogBlock } from "@/lib/content";
 import { SITE_URL } from "@/lib/config";
 
 export function generateStaticParams() {
@@ -174,6 +175,17 @@ export default async function BlogPostPage({
             {post.excerpt}
           </p>
 
+          <div className="relative mt-10 aspect-[1200/630] w-full overflow-hidden rounded-2xl">
+            <Image
+              src={getPostCover(post.slug)}
+              alt=""
+              fill
+              priority
+              sizes="(min-width: 768px) 672px, 100vw"
+              className="object-cover"
+            />
+          </div>
+
           <div className="mt-12 flex flex-col gap-6 text-[15px] leading-relaxed text-foreground/90">
             {post.content.map((block, i) => (
               <Block key={i} block={block} />
@@ -222,14 +234,25 @@ export default async function BlogPostPage({
               <Link
                 key={item.slug}
                 href={`/blog/${item.slug}`}
-                className="group flex flex-col gap-2 border-t border-border-soft py-5 transition-colors last:border-b hover:bg-foreground/[0.03]"
+                className="group flex items-center gap-5 border-t border-border-soft py-5 transition-colors last:border-b hover:bg-foreground/[0.03]"
               >
-                <span className="font-display text-lg uppercase transition-colors group-hover:text-accent">
-                  {item.title}
-                </span>
-                <span className="text-sm leading-relaxed text-muted">
-                  {item.excerpt}
-                </span>
+                <div className="relative aspect-[1200/630] w-28 shrink-0 overflow-hidden rounded-lg sm:w-36">
+                  <Image
+                    src={getPostCover(item.slug)}
+                    alt=""
+                    fill
+                    sizes="144px"
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <span className="font-display text-lg uppercase transition-colors group-hover:text-accent">
+                    {item.title}
+                  </span>
+                  <span className="text-sm leading-relaxed text-muted">
+                    {item.excerpt}
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { BLOG_POSTS } from "@/lib/content";
+import { BLOG_POSTS, getPostCover } from "@/lib/content";
 import Reveal from "./Reveal";
 import ParallaxBlob from "./ParallaxBlob";
 
@@ -35,27 +36,38 @@ export default function BlogPreview() {
           <Reveal key={post.slug} delay={i * 0.1} className="flex">
             <Link
               href={`/blog/${post.slug}`}
-              className="group flex flex-1 flex-col gap-4 bg-background p-8 transition-colors hover:bg-foreground/[0.03] md:p-10"
+              className="group flex flex-1 flex-col bg-background transition-colors hover:bg-foreground/[0.03]"
             >
-              <span className="text-xs tracking-[0.18em] text-muted uppercase">
-                {new Date(post.date).toLocaleDateString("ru-RU", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
-              </span>
-              <h3 className="font-display text-xl uppercase transition-colors group-hover:text-accent">
-                {post.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted">
-                {post.excerpt}
-              </p>
-              <span className="mt-auto flex items-center gap-2 pt-2 text-xs font-semibold tracking-[0.18em] text-accent uppercase">
-                Читать
-                <span className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                  ↗
+              <div className="relative aspect-[1200/630] w-full overflow-hidden">
+                <Image
+                  src={getPostCover(post.slug)}
+                  alt=""
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="flex flex-1 flex-col gap-4 p-8 md:p-10">
+                <span className="text-xs tracking-[0.18em] text-muted uppercase">
+                  {new Date(post.date).toLocaleDateString("ru-RU", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
                 </span>
-              </span>
+                <h3 className="font-display text-xl uppercase transition-colors group-hover:text-accent">
+                  {post.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted">
+                  {post.excerpt}
+                </p>
+                <span className="mt-auto flex items-center gap-2 pt-2 text-xs font-semibold tracking-[0.18em] text-accent uppercase">
+                  Читать
+                  <span className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                    ↗
+                  </span>
+                </span>
+              </div>
             </Link>
           </Reveal>
         ))}

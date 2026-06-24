@@ -19,16 +19,14 @@ export default function Hero() {
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div className="animate-fade-up">
           <h1 className="font-display text-[clamp(2.2rem,7.5vw,5rem)] leading-[0.95] tracking-tight uppercase">
-            Создаём
-            <br />
-            сайты
-            <br />
-            под ключ
+            Сайт под ключ
             <br />
             в Смоленске
             <span className="ml-2 inline-block align-super text-2xl text-accent md:text-3xl">
               ✳
             </span>
+            <br />
+            <span className="text-accent">от заявки до запуска</span>
           </h1>
 
           <div className="mt-8 flex max-w-sm items-start gap-3">
