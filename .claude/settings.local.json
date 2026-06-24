@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --app --eslint --src-dir=false --import-alias \"@/*\" --use-npm --turbopack)",
+      "Bash(npx --yes create-next-app@latest tmp_app --typescript --tailwind --app --eslint --src-dir=false --import-alias \"@/*\" --use-npm --turbopack)",
+      "PowerShell(Remove-Item -Path \"app\\\\og-font.ttf\" -Force -ErrorAction SilentlyContinue; $env:PATH = [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"User\"\\); npm run build)",
+      "PowerShell(Remove-Item -Path \"app\\\\blog\\\\skolko-stoit-sayt-v-2026\" -Recurse -Force -Confirm:$false)",
+      "PowerShell(npm run build)",
+      "PowerShell(Test-Path node_modules/next; Test-Path node_modules/.bin/next.cmd; \\(Test-Path node_modules\\) -and \\(\\(Get-ChildItem node_modules -Directory\\).Count\\))",
+      "PowerShell(npm install)"
+    ]
+  }
+}
